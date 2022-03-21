@@ -1,62 +1,82 @@
 *{
-  box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
 }
 
 body{
-  background-color: rgba(255, 228, 196, 0.815);
-  margin: 3rem;
+  background-color: white;
 }
 
 .App {
-  min-height: 100vh;
-  background:  rgba(255, 228, 196, 0.63);
-  align-items: center;
   display: block;
+  min-height: 100vh;
+  background-color: white;
 }
 
 h1{
+  display: inline;
   font-size: 3rem;
 }
 
-
-.header{
-  text-align: left;
+.App_header{
+  display: flex;
+  justify-content: space-between;
   border-bottom: 2px solid #000;
-  padding: 20px;
+  padding: 10px;
 }
 
-
-.head_card{
+.Card_header, .Task_header{
   border-bottom: 2px solid black;
-  padding: 20px;
+  min-height: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-bottom: 0;
 }
 
-.addbutton{
-  height: min-content;
-  width: min-content;
-}
+.CardsBox{
+  display: flex;
 
+}
 
 .Card{
-  height: 300px;
-  width: 300px;
-  background: beige;
+  min-height: 300px;
+  min-width: 300px;
+  background: rgba(255, 228, 196, 0.815);
   border-radius: 30px;
   border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 36px;
+  margin: 20px;
+  padding: 5px;
 }
 
-.task{
-  height: 100 px;
-  width: 300 px;
+.Task{
+  min-height: 100px;
+  min-width: fit-content;
   border-radius: 10px;
   border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  margin: 12 px;
+  margin: 4px;
 }
+.Card, .Task{
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+.AddCardButton{
+  align-self: center;
+}
+
+
+.Addbutton,.Deletebutton, .Szerkbutton{
+  background-color: transparent;
+  border: none;
+  align-self: center;
+  
+}
+img{
+  max-width: 20px;
+  max-height: 20px;
+}
+
+img:hover{
+  opacity: 0.5;
+}
+
