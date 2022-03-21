@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <div className='App_header'>
       <h1>Project</h1>
-      <button className='Szerkbutton'>Szerk</button>
+      <button className='AppEditbutton'>Edit Project</button>
       </div>
       <div className='CardsBox'>      
         <Card name ="Terv"/>
