@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './components/Card.js';
+import Task from './components/Task.js';
 import AddCardButton from './components/AddCardButton.js';
 
 function App() {
@@ -10,9 +11,12 @@ function App() {
       <button className='AppEditbutton'>Edit Project</button>
       </div>
       <div className='CardsBox'>      
-        <Card name ="Terv"/>
-        <Card name ="Folyamatban"/>
-        <Card name ="Kész"/>
+        <Card title ="Terv">
+          <Task title = "Task one"/>
+          <Task title = "Task two"/>
+        </Card>
+        <Card title ="Folyamatban"/>
+        <Card title ="Kész"/>
         <AddCardButton/>
       </div>
     </div>
