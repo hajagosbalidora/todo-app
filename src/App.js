@@ -6,15 +6,10 @@ import Task from './components/Task.js';
 class App extends Component {
   state = {
     cards: [
-      {id: 1, title: "Terv"},
-      {id: 2, title: "Folyamatban"},
-      {id: 3, title: "Kész"}
-    ],
-    tasks: [
-      {cardid: 1, title:" Task one"},
-      {cardid: 1, title:" Task two"},
-      {cardid: 2, title:" Task three"}
+      {id:1, title:"terv"},
+      {id:2, title:"folyamatban"}
     ]
+   
   }
 
   cardDeleteHandler = (cardIndex) =>{
@@ -28,11 +23,11 @@ class App extends Component {
     this.setState({cards: cards});
   }
 
+
   AddCardButtonHandler = () =>{
-    const card = new Card();
-    const cards = this.state.cards;
-    cards.push(card);
-    this.setState({cards: cards});
+    var newArray = this.state.cards.slice();    
+    newArray.push({id: 4, title: "Kész"});   
+    this.setState({cards:newArray})
 }
 
   render (){
@@ -54,7 +49,7 @@ class App extends Component {
               )
             })
           }
-          <button className="AddCard_btn" onClick={() => AddCardButtonHnadler}>Add Card</button>
+          <button className="AddCard_btn" onClick={() => this.AddCardButtonHandler()}>Add Card</button>
         </div>
       </div>
       

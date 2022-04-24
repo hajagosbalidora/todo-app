@@ -7,7 +7,7 @@ function Task(props){
         <div className='Task'>
             <h3 className='Task_header'>{props.title}
                 <div className='Buttons'>
-                    <button className="Deletebutton"><img src={binlogo} alt="Delete this task"/></button>
+                    <button className="Deletebutton" onClick={props.delete}><img src={binlogo} alt="Delete this task"/></button>
                     <button className="Editbutton"><img src={pencillogo} alt="Edit this card"/></button>
                 </div>
             </h3>

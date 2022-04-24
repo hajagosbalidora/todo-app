@@ -77,6 +77,7 @@ h1{
   transition-duration: 0.4s;
   cursor: pointer;
   text-align: center;
+  align-self: center;
 }
 .AddCard_btn:hover, .AppEditbutton:hover{
   background-color: #000;
