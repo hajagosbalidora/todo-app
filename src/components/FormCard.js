@@ -1,15 +1,15 @@
 import React from 'react';
+import cards from './cards';
 
 
-function FormCard({title}) {
-    changeCard = () =>{
-
-    }
+function FormCard({title, cardIndex}) {
+    const changeCard = (cardIndex) =>{
+    };
   return(
     <dialog>
         <label>Cím:</label>
         <input value={title}></input>
-        <button onClick={this.changeCard}>OK</button>
+        <button onClick={changeCard}>OK</button>
         <button>Mégsem</button>
     </dialog>
   );

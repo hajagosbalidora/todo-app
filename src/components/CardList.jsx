@@ -10,6 +10,7 @@ const CardList = ({cards}) => {
             /> 
         )
     });
+    
     return(
         <div className="CardList">
            {cardComponents} 
