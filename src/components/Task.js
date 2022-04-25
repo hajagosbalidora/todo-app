@@ -3,6 +3,7 @@ import binlogo from "../image/bin_black.png";
 import pencillogo from "../image/pencil_black.png";
 
 function Task(props) {
+
     return (
         <div className='Task'>
             <h3 className='Task_header'>{props.title}
@@ -11,9 +12,14 @@ function Task(props) {
                     <button className="Editbutton"><img src={pencillogo} alt="Edit this card" /></button>
                 </div>
             </h3>
+            <div className='Task_body'>
+                {props.description}
+                <div>
+                    {props.date}
+                </div>
+            </div>
         </div>
     );
-
 
 }
 

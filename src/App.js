@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
-import Card from './components/Card.js';
-import Task from './components/Task.js';
+import CardList from './components/CardList.jsx';
+import FormCard from './components/FormCard.js';
+import {cards} from './components/cards';
 
 
 class App extends Component {
-  state = {
-    cards: [
-      { id: 1, title: "terv" },
-      { id: 2, title: "folyamatban" }
-    ]
-
-  }
-
   cardDeleteHandler = (cardIndex) => {
     const cards = this.state.cards;
     cards.splice(cardIndex, 1);
     this.setState({ cards: cards });
   }
   cardEditHandler = (cardIndex) => {
-    const cards = this.state.cards;
-
-    this.setState({ cards: cards });
+    return(
+      <div>
+        <FormCard/>
+      </div>
+    );
+    
   }
 
 
@@ -38,17 +34,7 @@ class App extends Component {
           <button className='AppEditbutton'>Edit Project</button>
         </div>
         <div className='CardsBox'>
-          {
-            this.state.cards.map((card, index) => {
-              return (
-                <Card
-                  title={card.title}
-                  delete={() => this.cardDeleteHandler(index)}
-                  key={card.id}
-                />
-              )
-            })
-          }
+          <CardList cards ={cards}/>
           <button className="AddCard_btn" onClick={() => this.AddCardButtonHandler()}>Add Card</button>
         </div>
       </div>

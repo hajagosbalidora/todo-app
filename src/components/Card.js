@@ -39,7 +39,7 @@ class Card extends Component {
           <div className="Buttons">
             <button className="Addbutton" onClick={this.taskAddHandler}><img src={addlogo} alt="Add new task" /></button>
             <button className="Deletebutton" onClick={this.props.delete}><img src={binlogo} alt="Delete this card" /></button>
-            <button className="Editbutton"><img src={pencillogo} alt="Edit this card" /></button>
+            <button className="Editbutton" onClick={this.cardEditHandler(cardIndex)}><img src={pencillogo} alt="Edit this card" /></button>
           </div>
         </h2>
         <div>

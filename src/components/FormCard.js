@@ -1,16 +1,17 @@
 import React from 'react';
 
 
-function FormCard(props){
-    return(
-        <div className='Task'>
-            <h3 className='Task_header'>Card Change
-            </h3>
-            <input value={title} onChange={}
-        </div>
-    );
+function FormCard({title}) {
+    changeCard = () =>{
 
-        
+    }
+  return(
+    <dialog>
+        <label>Cím:</label>
+        <input value={title}></input>
+        <button onClick={this.changeCard}>OK</button>
+        <button>Mégsem</button>
+    </dialog>
+  );
 }
-
 export default FormCard;
