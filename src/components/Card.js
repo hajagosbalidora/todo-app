@@ -29,11 +29,12 @@ class Card extends Component {
   render() {
     return (
       <div className="Card">
-        <h2 className="Card_header">{this.props.title}
+        <h2 className="Card_header">
+          <input type="text" value={this.props.title}/>
           <div className="Buttons">
             <button className="Addbutton" onClick={this.taskAddHandler}><img src={addlogo} alt="Add new task" /></button>
             <button className="Deletebutton" onClick={this.props.delete}><img src={binlogo} alt="Delete this card" /></button>
-            <button className="Editbutton" ><img src={pencillogo} alt="Edit this card" /></button>
+            {/* <button className="Editbutton" ><img src={pencillogo} alt="Edit this card" /></button> */}
           </div>
         </h2>
         <div>

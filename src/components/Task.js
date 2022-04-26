@@ -6,17 +6,18 @@ function Task(props) {
 
     return (
         <div className='Task'>
-            <h3 className='Task_header'>{props.title}
+            <h3 className='Task_header'>
+                <input type="text" ivalue={props.title} />
                 <div className='Buttons'>
                     <button className="Deletebutton" onClick={props.delete}><img src={binlogo} alt="Delete this task" /></button>
-                    <button className="Editbutton"><img src={pencillogo} alt="Edit this card" /></button>
+                    {/* <button className="Editbutton"><img src={pencillogo} alt="Edit this card" /></button> */}
                 </div>
             </h3>
             <div className='Task_body'>
-                {props.description}
-                <div>
-                    {props.date}
-                </div>
+                <input type="text" ivalue={props.description} />
+            </div>
+            <div className='Task_date'>
+                <input type="text" ivalue={props.date} />
             </div>
         </div>
     );
