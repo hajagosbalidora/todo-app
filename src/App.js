@@ -5,13 +5,14 @@ import Card from "./components/Card";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.title = "Project";
     this.state = { cards:[
       { id: 1, title: "Függőben" },
       { id: 2, title: "Folyamatban" },
       { id: 3, title: "Kész" },
       { id: 4, title: "Elhalasztva" },
-    ] };
+    ],
+    title : "Project"
+   };
   }
 
   cardDeleteHandler = (cardIndex) => {
@@ -32,7 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className='App_header'>
-          <input value={this.props.title}/>
+          <input value={this.state.title}/>
           {/* <button className='AppEditbutton'>Edit Project</button> */}
         </div>
         <div className='CardsBox'>
