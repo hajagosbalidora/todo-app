@@ -5,9 +5,7 @@ import down from "../image/down.png";
 import pencillogo from "../image/pencil_black.png";
 
 class Task extends Component {
-    constructor(props) {
-        super(props);
-    }
+   
     render(){
         return (
             <div className='Task'>
@@ -15,7 +13,7 @@ class Task extends Component {
                     <h3>{this.props.title}</h3>
                     <div className='Buttons'>
                         <button className="Deletebutton" onClick={this.props.delete}><img src={binlogo} alt="Delete this task" /></button>
-                        <button className="Editbutton"><img src={pencillogo} alt="Edit this card" /></button>
+                        <button className="Editbutton" onClick={this.props.edit}><img src={pencillogo} alt="Edit this card" /></button>
                     </div>
                 </div>
                 <div className='Task_body'>

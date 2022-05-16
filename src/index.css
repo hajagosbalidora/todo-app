@@ -18,7 +18,7 @@ h3{
 .App {
   display: block;
   min-height: 100vh;
-  min-width: 200vh;
+  min-width: 200vw;
   background-color: white;
 }
 
@@ -142,4 +142,78 @@ img:hover{
 .UpandDownbutton{
   display: flex;
   justify-content: center;
+}
+
+.FormBackground{
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.19);
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.Formcontanier{
+  width: 200px;
+  height: 350px;
+  border: 2px solid;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.6) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.Addfrom_header{
+  display: flex;
+  justify-content: center;
+}
+.Formcontanier_close{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Close_addform{
+  width: 30px;
+  height: 20px;
+  background-color: rgba(255, 228, 196, 0.815);
+  border-radius: 12px;
+  border: 2px solid;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+}
+.Addform{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Submit{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.Submit button{
+  background-color: rgba(255, 228, 196, 0.815);
+  height: 50px;
+  width: 50px;
+  border-radius: 12px;
+  border: 2px solid;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+}
+.Submit button:hover, .Close_addform:hover{
+  background-color: #000;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.Submit button:active, .Close_addform:active
+{
+  transform: translateY(2px);
 }

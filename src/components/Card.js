@@ -3,28 +3,20 @@ import addlogo from "../image/add_black.png";
 import binlogo from "../image/bin_black.png";
 import pencillogo from "../image/pencil_black.png";
 import Task from "./Task";
+import tasks from './tasks';
 
 
 
 class Card extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      tasks:[
-        { id: 1, title: "Függőben" , description: '1', date: "2020-01-02"},
-        { id: 2, title: "Függőben1", description: '1', date: "2020-01-02" },
-        { id: 3, title: "Függőben2", description: '1', date: "2020-01-02"},
-      ] 
-    };
+    this.state = {
+      isEditOpen:false,
+      tasks: tasks,
+     };
   }
 
   
-  taskAddHandler = () => {
-    var newArray = this.state.tasks.slice();
-    newArray.push(new Task({}));
-    this.setState({ tasks: newArray })
-  }
-
   taskDeleteHandler(taskIndex){
     const newTaskArray = [...this.state.tasks];
     newTaskArray.splice(taskIndex, 1);
@@ -56,9 +48,8 @@ class Card extends Component {
         <div className="Card_header">
           <h2>{this.props.title}</h2>
           <div className="Buttons">
-            <button className="Addbutton" onClick={this.taskAddHandler}><img src={addlogo} alt="Add new task" /></button>
+            <button className="Addbutton" onClick={this.props.taskadd}><img src={addlogo} alt="Add new task" /></button>
             <button className="Deletebutton" onClick={this.props.delete}><img src={binlogo} alt="Delete this card" /></button>
-            {/* <button className="Editbutton" ><img src={pencillogo} alt="Edit this card" /></button> */}
           </div>
         </div>
         <div>
@@ -71,6 +62,7 @@ class Card extends Component {
               date = {task.date}
               priority= {index}
               delete={() => this.taskDeleteHandler(index)}
+              edit={this.props.edit}
               up= {() => this.taskUpHandler(index)}
               down= {() => this.taskDownHandler(index)} />
             )
@@ -88,3 +80,4 @@ class Card extends Component {
 
 
 export default Card;
+
