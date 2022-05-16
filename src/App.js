@@ -3,28 +3,26 @@ import Card from "./components/Card";
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { cards:[
+
+    state = { cards:[
       { id: 1, title: "Függőben" },
       { id: 2, title: "Folyamatban" },
       { id: 3, title: "Kész" },
       { id: 4, title: "Elhalasztva" },
-    ],
-    title : "Project"
-   };
+    ]
   }
 
-  cardDeleteHandler = (cardIndex) => {
-    const newArray = this.state.cards;
-    newArray.splice(cardIndex, 1);
-    this.setState({ cards: newArray });
-  }
-
+  
   AddCardButtonHandler = () => {
     var newArray = this.state.cards.slice();
     newArray.push(new Card({}));
     this.setState({ cards: newArray })
+  }
+
+  cardDeleteHandler(cardindex){
+    const newArray = [...this.state.cards];
+    newArray.splice(cardindex, 1);
+    this.setState({ cards: newArray });
   }
 
 
@@ -33,13 +31,16 @@ class App extends Component {
     return (
       <div className="App">
         <div className='App_header'>
-          <input value={this.state.title}/>
-          {/* <button className='AppEditbutton'>Edit Project</button> */}
+          <h1>Project</h1>
         </div>
         <div className='CardsBox'>
-          {this.state.cards.map(card => {
+          {this.state.cards.map((card,index) => {
             return (
-              <Card key={card.id} title={card.title} delete={(cardIndex) => this.cardDeleteHandler(cardIndex)} add={() => this.taskAddHandler} />
+              <Card 
+              key={card.id} 
+              title={card.title} 
+              delete={() => this.cardDeleteHandler(index)} 
+              add={() => this.taskAddHandler} />
             )
           }
           )}

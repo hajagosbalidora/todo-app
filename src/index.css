@@ -5,16 +5,21 @@
 body{
   background-color: white;
 }
-
+h1{
+  font-size: 3rem;
+  margin: 15px;
+}
+h2{
+  margin: 10px;
+}
+h3{
+  margin: 10px;
+}
 .App {
   display: block;
   min-height: 100vh;
+  min-width: 200vh;
   background-color: white;
-}
-
-h1{
-  display: inline;
-  font-size: 3rem;
 }
 
 .App_header{
@@ -22,48 +27,37 @@ h1{
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid #000;
-  padding: 10px;
 }
-.App_header input{
-  background-color: transparent;
-  border: 0;
-  font-size: 3rem;
-  padding: 10px;
-  font-weight: bold;
-}
-.App_header input:focus{
-  outline: none;
+.CardsBox{
+  display: flex;
 }
 
 .Card_header{
   border-bottom: 2px solid black;
   min-height: 20px;
-  display: block;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
+.Buttons{
+  display: flex;
+  justify-content: center;
+}
 .Task_header{
   border-bottom: 2px solid black;
   min-height: 20px;
   display: flex;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 15px;
+  justify-content: space-between;
 }
 
-.CardsBox{
-  display: flex;
-
-}
-.CardList{
-  display: flex;
+p{
+  margin: 5px;
+  
 }
 
 .Card{
-  min-height: 300px;
-  min-width: 250px;
+  min-height: 200px;
+  min-width: 200px;
   background: rgba(255, 228, 196, 0.815);
   border-radius: 30px;
   border: 2px solid black;
@@ -80,6 +74,20 @@ h1{
   margin-top: 10px;
   margin-bottom: 10px;
   transition-duration: 0.4s;
+}
+
+.Task_body{
+  display: flex;
+  justify-content: center;
+}
+
+.Task_date{
+  margin: 10px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 12px;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .Card, .Task{
@@ -107,14 +115,16 @@ h1{
 }
 
 
-.Addbutton, .Deletebutton, .Editbutton{
+.Addbutton, .Deletebutton, .Editbutton, .Up, .Down{
   background-color: transparent;
   border: none;
   align-self: center;
   
 }
 
-.Addbutton:active, .Deletebutton:active, .Editbutton:active,.AddCard_btn:active, .AppEditbutton:active{
+.Addbutton:active, .Deletebutton:active, .Editbutton:active,.AddCard_btn:active, .AppEditbutton:active,
+.Up:active, .Down:active
+{
   transform: translateY(2px);
 }
 
@@ -127,49 +137,9 @@ img:hover{
   opacity: 0.5;
 }
 
-.Card_header input{
-  background-color: transparent;
-  border: 0;
-  font-size: 1.5rem;
-  padding: 0;
-  font-weight: bold;
-}
-.Card_header input:focus{
-  outline: none;
-}
 
-.Task_header input{
-  background-color: transparent;
-  border: 0;
-  font-size: 1rem;
-  font-weight: bold;
-}
-.Task_header input:focus{
-  outline: none;
-}
 
-.Task_body input{
-  background-color: transparent;
-  border: 0;
-  margin: 3px;
-  font-size: 1rem;
-  height: fit-content;
-  width: fit-content;
-}
-.Task_body input:focus{
-  outline: none;
-}
-
-.Task_date input{
-  background-color: transparent;
-  border: 2px solid black;
-  border-radius: 12px;
-  font-size: 1rem;
-  text-align: center;
-}
-.Task_date input:focus{
-  outline: none;
-}
-.Task_date{
-  margin: 10px;
+.UpandDownbutton{
+  display: flex;
+  justify-content: center;
 }
