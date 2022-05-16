@@ -47,14 +47,20 @@ namespace TodoApp.Controllers
         // PUT: api/Cards/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCard(long id, Card card)
+        public async Task<IActionResult> PutCard(long id, CardDto request)
         {
+            if (request == null)
+            {
+                return BadRequest();
+            }
+            var card = await _context.Cards.FindAsync(id);
             if (id != card.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(card).State = EntityState.Modified;
+            card.Name = request.Name;
+            await _context.SaveChangesAsync();
 
             try
             {
@@ -78,15 +84,15 @@ namespace TodoApp.Controllers
         // POST: api/Cards
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Card>> PostCard(Card card)
+        public async Task<ActionResult<Card>> PostCard(CardDto request)
         {
-            if(card == null)
+            if(request == null)
                 return BadRequest();
-            if(card.Todos == null)
-            {
-                _context.Cards.Add(card);
-                await _context.SaveChangesAsync();
-            }
+            Card card = new Card();
+            card.Name = request.Name;
+            _context.Cards.Add(card);
+            await _context.SaveChangesAsync();
+
 
             return CreatedAtAction("GetCard", new { id = card.Id }, card);
         }

@@ -47,15 +47,46 @@ namespace TodoApp.Controllers
         // PUT: api/Todos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodo(long id, Todo todo)
+        public async Task<IActionResult> PutTodo(long id, TodoDto request)
         {
+            if (request == null)
+                return BadRequest();
+            var todo = await _context.Todos.FindAsync(id);
             if (id != todo.Id)
             {
                 return BadRequest();
             }
-
-            _context.Entry(todo).State = EntityState.Modified;
-
+            var todoCard = todo.CardType;
+            if(todoCard.Id != request.CardId)
+            {
+                var cards =_context.Cards.ToList();
+                foreach(var card in cards)
+                {
+                    card.Todos.Remove(todo);
+                }
+                var newtodo = new Todo()
+                {
+                    Title = request.Title,
+                    Description = request.Description,
+                    Deadline = request.Deadline
+                };
+                _context.Entry(newtodo).Property(t => t.Title).IsModified = true;
+                _context.Entry(newtodo).Property(t => t.Title).IsModified = true;
+                _context.Entry(newtodo).Property(t => t.Title).IsModified = true;
+                foreach (var card in cards)
+                {
+                    card.Todos.Add(newtodo);
+                }
+            }
+            var newTodo = new Todo()
+            {
+                Title = request.Title,
+                Description = request.Description,
+                Deadline = request.Deadline
+            };
+            _context.Entry(newTodo).Property(t => t.Title).IsModified = true;
+            _context.Entry(newTodo).Property(t => t.Title).IsModified = true;
+            _context.Entry(newTodo).Property(t => t.Title).IsModified = true;
             try
             {
                 await _context.SaveChangesAsync();
