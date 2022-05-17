@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Card from "./components/Card";
 import AddForm from "./components/AddForm";
 import EditForm from "./components/EditForm";
-import Task from './components/Task';
 
 class App extends Component {
 
