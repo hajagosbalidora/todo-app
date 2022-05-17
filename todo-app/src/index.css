@@ -1,0 +1,219 @@
+*{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+  background-color: white;
+}
+h1{
+  font-size: 3rem;
+  margin: 15px;
+}
+h2{
+  margin: 10px;
+}
+h3{
+  margin: 10px;
+}
+.App {
+  display: block;
+  min-height: 100vh;
+  min-width: 200vw;
+  background-color: white;
+}
+
+.App_header{
+  min-width: min-content;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #000;
+}
+.CardsBox{
+  display: flex;
+}
+
+.Card_header{
+  border-bottom: 2px solid black;
+  min-height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Buttons{
+  display: flex;
+  justify-content: center;
+}
+.Task_header{
+  border-bottom: 2px solid black;
+  min-height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+p{
+  margin: 5px;
+  
+}
+
+.Card{
+  min-height: 200px;
+  min-width: 200px;
+  background: rgba(255, 228, 196, 0.815);
+  border-radius: 30px;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 5px;
+}
+
+.Task{
+  min-height: 100px;
+  min-width: fit-content;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition-duration: 0.4s;
+}
+
+.Task_body{
+  display: flex;
+  justify-content: center;
+}
+
+.Task_date{
+  margin: 10px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 12px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.Card, .Task{
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+.AddCard_btn, .AppEditbutton{
+  height: 60px;
+  width: 100px;
+  font-size: 16px;
+  padding: 12px 28px;
+  background-color: rgba(255, 228, 196, 0.815);
+  border: 2px solid black;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+}
+.AddCard_btn:hover, .AppEditbutton:hover{
+  background-color: #000;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+.Addbutton, .Deletebutton, .Editbutton, .Up, .Down{
+  background-color: transparent;
+  border: none;
+  align-self: center;
+  
+}
+
+.Addbutton:active, .Deletebutton:active, .Editbutton:active,.AddCard_btn:active, .AppEditbutton:active,
+.Up:active, .Down:active
+{
+  transform: translateY(2px);
+}
+
+img{
+  max-width: 20px;
+  max-height: 20px;
+}
+
+img:hover{
+  opacity: 0.5;
+}
+
+
+
+.UpandDownbutton{
+  display: flex;
+  justify-content: center;
+}
+
+.FormBackground{
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.19);
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.Formcontanier{
+  width: 200px;
+  height: 350px;
+  border: 2px solid;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.6) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.Addfrom_header{
+  display: flex;
+  justify-content: center;
+}
+.Formcontanier_close{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Close_addform{
+  width: 30px;
+  height: 20px;
+  background-color: rgba(255, 228, 196, 0.815);
+  border-radius: 12px;
+  border: 2px solid;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+}
+.Addform{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Submit{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.Submit button{
+  background-color: rgba(255, 228, 196, 0.815);
+  height: 50px;
+  width: 50px;
+  border-radius: 12px;
+  border: 2px solid;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+}
+.Submit button:hover, .Close_addform:hover{
+  background-color: #000;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.Submit button:active, .Close_addform:active
+{
+  transform: translateY(2px);
+}
