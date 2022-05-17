@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Todo applikáció
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Todo applikációban tudunk eltárolni elkészítendő feladatokat, amelyeknek van neve, leírása, határideje és állapota. A különböző állapotokhoz hozzáadhatóak az elvégzendő feladatok.
 
-## Available Scripts
+## Beüzemelés
 
-In the project directory, you can run:
+Az alkalmazás beüzemelését a githubról letöltve a repository UI terv branch-ből tudjuk elindítani. Az alkalmazás tartalmazza a frontend és a backend kódját. A fronted kódot (útvonal: todo-app/todo-app) megnyitva a Visual Studio Code-ban a terminálban kiadott npm start paranccsal indítható, utána pedig a http://localhost:3000 linken érhető el. A backend része pedig (útvonal: todo-app\Backend\TodoApp\TodoApp.sln) a Visual Studio-ban a build project és run parancsokkal indítható el. Az adatbázist a Microsoft SQL Server Management Studio-ban a localhost\sqlexpress csatlakozással érhető el, és az adatbázis a Visual Studio-ban lefutott projekt után jelenik meg Microsoft SQL Server Management Studio-ban. 
 
-### `npm start`
+### Backend leírása
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A backend tartalmaz két entitást, amelyek a Card és Todo osztályokként reprezentálódnak a Visual Studio-ban. A két osztály a Model mappában található. A Card propertyjei között van az id (long típusú), name (string tipusú) és todok egy listája. A Todo propertyjei között van úgyszintén egy id (long típusú), title (string típusú), description (string típusú), deadline (date típusú), priority (int típusú) és cardtype (Card típusú) változó. Emellett Data mappában megtalálható a DataContext, amely az adatbázit reprezentálja és tartalmazza a két osztály entitását. Kettő kontrollert is tartalmaz a backend az egyik a card a másik a todo, és ezek az a api végpontokat tartalmazzák, amelyek a következők:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### CardController:
 
-### `npm test`
+GET: api/Cards: Az adatbázisban lévő összes cardot visszadja.
+POST: api/Cards: Új cardot ad az adatbázishoz, amelynél megadható a card neve.
+GET: api/Cards/id: Az adatbázisból visszaadja az id alapján a megfelelő cardot.
+PUT: api/Cards/id: Változtatni lehet a nevét a már adatbázisban lévő cardnak, amelyet id alapján lehet így modsósítani.
+DELETE: api/Cards/id: Törölni lehet id alapján a cardot az adatbázisból.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### TodoController:
 
-### `npm run build`
+GET: api/Todos: Az adatbázisban lévő összes todot visszadja.
+POST: api/Todos: Új todot ad az adatbázishoz, amelynél megadható a todo címe, leírása, határideje, priority és a cardid.
+GET: api/Todos/id: Az adatbázisból visszaadja az id alapján a megfelelő todot.
+PUT: api/Todos/id: Változtatni lehet a már adatbázisban lévő todot id alapján.
+DELETE: api/Todos/id: Törölni lehet id alapján a todot az adatbázisból.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A backend tartalmazza a DTO mappát, amely egy CardDto és a TodoDto osztályokat foglalja magában. A CardDto a name (string típusú) változóval, és a TodoDto a title (string típusú), description (string típusú), deadline (date típusú), priority (int típusú) és CardId (long típusú) változóval szerepel.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend leírása
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A frontendben a project tartalmazza a cardokat, amelyek tartalmazzák a todokat, annak megfelelően, hogy a felhasználó, mely card vagyis állapotba sorolja a feladatait. Az applikáción belül lehet új cardokat hozzáadni, todokat hozzáadni cardokhoz, törölni cardokat és todokat. 
+A frontend tartalmaz egy App komponens, a többi komponens a components mappában található, amelyek a Card, Task, Addfrom és a Editform komponens. A card komponens a todok állapotát fejezi ki. A Task komponens reprezentálja a todokat. Az app komponens kiíratja a cardokat, emellett a törlést és a módosítást is végezné. A card komponens a taskokat jeleníti meg és foglalja magában, és a taskok törlése és priorizálásuk módosítása is itt hajtódik végre. Az Addform komponens megjelenít egy 3 beviteli mezővel rendelkező formot, amelyben megadható egy task neve, leírása és határideje. A mentés gombra rányomva megjelenik az új task a cardban. Az Editform is megjelenít egy három beviteli mezős formot, amellyel a task nevét, leírását és határ idejét lehet módosítani. Ezenkívül a frontend egy külön index.css fájlban tartalmazza a megjelenítéshez szükséges paramétereket.
+Az applikációban az Add card gomb hatására megadható egy új gomb, amely meg is jelenik a felületen. A cardok fejlécében a neve mellett a plusz gombbal hozzáadható egy új task, amely a form kitöltése után jelenik meg. A másik gomb a kuka, amellyel lehet törölni az adott cardot. A taskok fejlécében lévő gombbal lehet törölni az adott taskot úgyszintén a kuka gombbal. A taskok legalján a fel és le gombbal lehet a prioritásukat változtatni. A fel gombbal eggyel fentebbi prioritásban kerül a lefele gombbal egy alacsonyabb prioritásba kerül. Így a card legtetején lévő task a legfontosabb.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
