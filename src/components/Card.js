@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import addlogo from "../image/add_black.png";
 import binlogo from "../image/bin_black.png";
-import pencillogo from "../image/pencil_black.png";
 import Task from "./Task";
 import tasks from './tasks';
 
