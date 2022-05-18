@@ -34,7 +34,7 @@ namespace TodoApp.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Card>> GetCard(long id)
         {
-            var card = await _context.Cards.FindAsync(id);
+            var card = await _context.Cards.Include(c => c.Todos).Where(c => c.Id == id).FirstOrDefaultAsync();
 
             if (card == null)
             {
