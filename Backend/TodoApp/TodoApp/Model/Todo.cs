@@ -10,7 +10,6 @@ namespace TodoApp.Model
         public string ? Description { get; set; }
 
         public DateTime Deadline { get; set; }
-        [JsonIgnore]
         public int ? Priority { get; set; }
         [JsonIgnore]
         public Card CardType { get; set; }

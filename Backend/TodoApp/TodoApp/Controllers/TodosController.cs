@@ -118,11 +118,11 @@ namespace TodoApp.Controllers
             {
                 Title = request.Title,
                 Description = request.Description,
-                Deadline = request.Deadline
+                Deadline = request.Deadline,
+                Priority = request.Priority
             };
             _context.Todos.Add(newTodo);
             card.Todos.Add(newTodo);
-            newTodo.Priority = card.Todos.IndexOf(newTodo);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTodo", new { id = newTodo.Id }, newTodo);

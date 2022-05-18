@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cuJ1BjaWe3R9tuMUqsvg2t60Jnxb0udZKQZG0ImEtQRyVGPZjoWBx/GE3vBJW8p8W2C358yMqeHsVpxWKNGwVg==",
+  "dgSpecHash": "Cl8qwwjOsO6dVBWTAHdW5rQyTn2xB+/UeGRN32Rel5MClOSMj3+CsQwffqxqR24/RB1QYWOD8y3Zx26N5/lSHg==",
   "success": true,
-  "projectFilePath": "D:\\dori\\BME\\2021_2022_2\\Témalabor\\todo-app\\Backend\\TodoApp\\TodoApp\\TodoApp.csproj",
+  "projectFilePath": "D:\\dori\\BME\\2021_2022_2\\Téma_labor\\todo-app\\Backend\\TodoApp\\TodoApp\\TodoApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dora\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dora\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
