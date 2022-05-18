@@ -12,19 +12,19 @@ A backend tartalmaz két entitást, amelyek a Card és Todo osztályokként repr
 
 #### CardController:
 
-GET: api/Cards: Az adatbázisban lévő összes cardot visszadja.
-POST: api/Cards: Új cardot ad az adatbázishoz, amelynél megadható a card neve.
-GET: api/Cards/id: Az adatbázisból visszaadja az id alapján a megfelelő cardot.
-PUT: api/Cards/id: Változtatni lehet a nevét a már adatbázisban lévő cardnak, amelyet id alapján lehet így modsósítani.
-DELETE: api/Cards/id: Törölni lehet id alapján a cardot az adatbázisból.
+#####GET: api/Cards: Az adatbázisban lévő összes cardot visszadja.
+#####POST: api/Cards: Új cardot ad az adatbázishoz, amelynél megadható a card neve.
+#####GET: api/Cards/id: Az adatbázisból visszaadja az id alapján a megfelelő cardot.
+#####PUT: api/Cards/id: Változtatni lehet a nevét a már adatbázisban lévő cardnak, amelyet id alapján lehet így modsósítani.
+#####DELETE: api/Cards/id: Törölni lehet id alapján a cardot az adatbázisból.
 
 #### TodoController:
 
-GET: api/Todos: Az adatbázisban lévő összes todot visszadja.
-POST: api/Todos: Új todot ad az adatbázishoz, amelynél megadható a todo címe, leírása, határideje, priority és a cardid.
-GET: api/Todos/id: Az adatbázisból visszaadja az id alapján a megfelelő todot.
-PUT: api/Todos/id: Változtatni lehet a már adatbázisban lévő todot id alapján.
-DELETE: api/Todos/id: Törölni lehet id alapján a todot az adatbázisból.
+#####GET: api/Todos: Az adatbázisban lévő összes todot visszadja.
+#####POST: api/Todos: Új todot ad az adatbázishoz, amelynél megadható a todo címe, leírása, határideje, priority és a cardid.
+#####GET: api/Todos/id: Az adatbázisból visszaadja az id alapján a megfelelő todot.
+#####PUT: api/Todos/id: Változtatni lehet a már adatbázisban lévő todot id alapján.
+#####DELETE: api/Todos/id: Törölni lehet id alapján a todot az adatbázisból.
 
 A backend tartalmazza a DTO mappát, amely egy CardDto és a TodoDto osztályokat foglalja magában. A CardDto a name (string típusú) változóval, és a TodoDto a title (string típusú), description (string típusú), deadline (date típusú), priority (int típusú) és CardId (long típusú) változóval szerepel.
 
