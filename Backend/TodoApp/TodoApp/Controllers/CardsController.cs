@@ -27,7 +27,7 @@ namespace TodoApp.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Card>>> GetCards()
         {
-            return await _context.Cards.ToListAsync();
+            return await _context.Cards.Include(c => c.Todos).ToListAsync();
         }
 
         // GET: api/Cards/5
@@ -40,7 +40,7 @@ namespace TodoApp.Controllers
             {
                 return NotFound();
             }
-
+            
             return card;
         }
 
