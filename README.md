@@ -4,7 +4,7 @@ A Todo applikációban tudunk eltárolni elkészítendő feladatokat, amelyeknek
 
 ## Beüzemelés
 
-Az alkalmazás beüzemelését a githubról letöltve a repository a master branch-ből tudjuk elindítani. Az alkalmazás tartalmazza a frontend és a backend kódját. A fronted kódot (útvonal: todo-app/todo-app) megnyitva a Visual Studio Code-ban a terminálban kiadott npm install, majd az npm start paranccsal indítható, utána pedig a http://localhost:3000 linken érhető el. A backend része pedig (útvonal: todo-app\Backend\TodoApp\TodoApp.sln) a Visual Studio-ban a build project és run parancsokkal indítható el. Az adatbázist a Microsoft SQL Server Management Studio-ban a localhost\sqlexpress csatlakozással érhető el, és az adatbázis a Visual Studio-ban lefutott projekt után jelenik meg Microsoft SQL Server Management Studio-ban. 
+Az alkalmazás beüzemelését a githubról letöltve a repository a master branch-ből tudjuk elindítani. Az alkalmazás tartalmazza a frontend és a backend kódját. A fronted kódot (útvonal: todo-app/todo-app) megnyitva a Visual Studio Code-ban a terminálban kiadott npm install, majd az npm start paranccsal indítható, utána pedig a http://localhost:3000 linken érhető el. A backend része pedig (útvonal: todo-app\Backend\TodoApp\TodoApp.sln) a Visual Studio-ban a build solution és run parancsokkal indítható el. Az adatbázist a Microsoft SQL Server Management Studio-ban a localhost\sqlexpress csatlakozással érhető el, és az adatbázis a Visual Studio-ban lefutott projekt után jelenik meg Microsoft SQL Server Management Studio-ban. 
 
 ## Backend leírása
 
